@@ -5,7 +5,7 @@ library(scales)
 library(pracma)
 
 # Set directory to where you want plot .pngs to appear
-setwd("C:/Users/s5248233/OneDrive - Griffith University/JEV Review/Analysis/Code and figures")
+setwd()
 
 ##############################################
 ### PART 1: DATA CLEANUP AND CONSOLIDATION ###
@@ -159,7 +159,7 @@ for (h in 1: length(by_host)){
 }
 
 ###############################################################
-### PART 3: SCALE AUC BY PROPORTION VIRAEMIC AND PLOT FIG 2 ###
+### PART 3: SCALE AUC BY PROPORTION VIRAEMIC AND PLOT FIG 3 ###
 ###############################################################
 
 # Calculate AUC weighted by p_viraemic
@@ -172,7 +172,6 @@ df_AUC_scaled_LD50<- df_AUC_scaled_LD50%>%
 
 cols <- c('#0A54A8','#F24384') 
 
-######## PROTOTYPE
 colfunc<-colorRampPalette(c("#005AB5"))
 pal<-colfunc(1000)
 cols_avg <- pal[with(df_AUC_scaled_LD50, round(weighted_AUC/max(weighted_AUC)*1000,0))]
